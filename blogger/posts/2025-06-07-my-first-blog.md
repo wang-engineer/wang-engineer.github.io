@@ -64,6 +64,7 @@ spec:
 
 ## 🔍 Explanation of Each Section
 
+<div style="list-style-type: disc; margin: 1em 0; padding-left: 2em;">
 <details>
 <summary><strong>apiVersion: apps/v1</strong></summary>
 
@@ -71,6 +72,7 @@ spec:
 - `apps/v1` is the stable version for Deployments.
 
 </details>
+</div>
 
 <details>
 <summary><strong>kind: Deployment</strong></summary>
