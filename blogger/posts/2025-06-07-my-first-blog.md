@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "2025-06-07: understanding deployment manifest in Kubernetes"
-tags: [kubernetes, deployment, machine-learning]
+tags: [kubernetes, deployment]
 permalink: /blogger/posts/2025-06-07-my-first-blog/
 ---
 
@@ -74,84 +74,82 @@ spec:
 
 <details>
 <summary><strong>kind: Deployment</strong></summary>
-
-- Declares that this YAML defines a Deployment resource.
-
+<ul>
+  <li>Declares that this YAML defines a Deployment resource.</li>
+</ul>
 </details>
 
 <details>
 <summary><strong>metadata</strong></summary>
-
-- `name`: The name of the Deployment object.
-- Used for identification within the namespace.
-
+<ul>
+  <li><code>name</code>: The name of the Deployment object.</li>
+  <li>Used for identification within the namespace.</li>
+</ul>
 </details>
 
 <details>
 <summary><strong>spec.replicas</strong></summary>
-
-- The number of Pods to run at any given time.
-
+<ul>
+  <li>The number of Pods to run at any given time.</li>
+</ul>
 </details>
 
 <details>
 <summary><strong>spec.selector</strong></summary>
-
-- Defines how the Deployment finds which Pods to manage.
-- It matches Pods with the label `app: my-app`.
-
+<ul>
+  <li>Defines how the Deployment finds which Pods to manage.</li>
+  <li>It matches Pods with the label <code>app: my-app</code>.</li>
+</ul>
 </details>
 
 <details>
 <summary><strong>template.metadata.labels</strong></summary>
-
-- Labels to assign to Pods created by this Deployment.
-
+<ul>
+  <li>Labels to assign to Pods created by this Deployment.</li>
+</ul>
 </details>
 
 <details>
 <summary><strong>containers</strong></summary>
-
-Defines the container(s) in the Pod.
-
-- `name`: Logical name for the container.
-- `image`: Docker image to use.
-- `ports`: Exposed ports.
-
+<ul>
+  <li>Defines the container(s) in the Pod.</li>
+  <li><code>name</code>: Logical name for the container.</li>
+  <li><code>image</code>: Docker image to use.</li>
+  <li><code>ports</code>: Exposed ports.</li>
+</ul>
 </details>
 
 <details>
 <summary><strong>resources</strong></summary>
-
-Resource management:
-
-- **requests**: Minimum resources the container is guaranteed.
-- **limits**: Maximum resources the container can use.
-
+<ul>
+  <li>Resource management:</li>
+  <li><strong>requests</strong>: Minimum resources the container is guaranteed.</li>
+  <li><strong>limits</strong>: Maximum resources the container can use.</li>
+</ul>
 </details>
 
 <details>
 <summary><strong>livenessProbe</strong></summary>
-
-- Tells Kubernetes how to check if the app is still running.
-- If this probe fails repeatedly, the Pod is restarted.
-
+<ul>
+  <li>Tells Kubernetes how to check if the app is still running.</li>
+  <li>If this probe fails repeatedly, the Pod is restarted.</li>
+</ul>
 </details>
 
 <details>
 <summary><strong>readinessProbe</strong></summary>
-
-- Determines if the app is ready to receive traffic.
-- If it fails, the Pod is removed from service endpoints.
-
+<ul>
+  <li>Determines if the app is ready to receive traffic.</li>
+  <li>If it fails, the Pod is removed from service endpoints.</li>
+</ul>
 </details>
 
 <details>
 <summary><strong>volumeMounts and volumes</strong></summary>
-
-- `volumeMounts` defines where in the container the volume is mounted.
-- `volumes` defines the actual volume resource (e.g., `emptyDir`, `configMap`, etc.).
-
+<ul>
+  <li><code>volumeMounts</code>: Defines where in the container the volume is mounted.</li>
+  <li><code>volumes</code>: Defines the actual volume resource (e.g., <code>emptyDir</code>, <code>configMap</code>, etc.).</li>
+</ul>
 </details>
 
 ---
