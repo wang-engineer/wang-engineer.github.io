@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "2025-06-07: understanding deployment manifest in Kubernetes"
+title: "2025-06-07: understanding deployment manifest in Kubernetes with an example"
 tags: [kubernetes, deployment]
 permalink: /blogger/posts/2025-06-07-my-first-blog/
 ---
 
-# Understanding `deployment.yaml` in Kubernetes
+# Understanding `deployment.yaml` in Kubernetes with an example
 > 💬 *“If you can’t explain it simply, you don’t understand it well enough.”*  
 > — Albert Einstein
 
@@ -192,7 +192,7 @@ spec:
 <ul>
   <li>`volumes`: Defines the actual volume resource (e.g., `emptyDir`, `configMap`, etc.). It is a list of named volumes that the Pod can use.</li>
   <li>`name: html-volume`: This is the name of the volume. It must match what's used in the container’s `volumeMounts`</li>
-  <li><code>emptyDir: {}</code>: This tells Kubernetes to use an emptyDir volume — a built-in ephemeral volume type.</li>
+  <li>`emptyDir: {}`: This tells Kubernetes to use an emptyDir volume — a built-in ephemeral volume type.</li>
 </ul>
 </details>
 
