@@ -64,15 +64,13 @@ spec:
 
 ## 🔍 Explanation of Each Section
 
-<div style="list-style-type: disc; margin: 1em 0; padding-left: 2em;">
 <details>
 <summary><strong>apiVersion: apps/v1</strong></summary>
-
-- Specifies the API version of the Kubernetes resource.
-- `apps/v1` is the stable version for Deployments.
-
+<ul>
+  <li>Specifies the API version of the Kubernetes resource.</li>
+  <li><code>apps/v1</code> is the stable version for Deployments.</li>
+</ul>
 </details>
-</div>
 
 <details>
 <summary><strong>kind: Deployment</strong></summary>
