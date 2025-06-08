@@ -83,7 +83,7 @@ spec:
 <summary><strong>apiVersion: apps/v1</strong></summary>
 <ul>
   <li>Specifies the API version of the Kubernetes resource.</li>
-  <li><code>apps/v1</code> is the stable version for Deployments.</li>
+  <li>`apps/v1` is the stable version for Deployments.</li>
 </ul>
 </details>
 
@@ -97,7 +97,7 @@ spec:
 <details>
 <summary><strong>metadata</strong></summary>
 <ul>
-  <li><code>name</code>: The name of the Deployment object.</li>
+  <li>`name`: The name of the Deployment object.</li>
   <li>Used for identification within the namespace. This name must be unique within the same namespace and is DNS-compliant (lowercase, numbers, and dashes allowed)</li>
 </ul>
 </details>
@@ -106,7 +106,7 @@ spec:
 <summary><strong>spec.replicas</strong></summary>
 <ul>
   <li>The number of Pods to run at any given time.</li>
-  <li><code>replicas: 3</code>: Tells Kubernetes to maintain 3 replicas (copies) of the Pod at all times. If one Pod crashes or is deleted, Kubernetes automatically creates a new one.</li>
+  <li>`replicas: 3`: Tells Kubernetes to maintain 3 replicas (copies) of the Pod at all times. If one Pod crashes or is deleted, Kubernetes automatically creates a new one.</li>
   <li>This is useful for high availability, load balancing, and fault tolerance</li>
 </ul>
 </details>
@@ -115,7 +115,7 @@ spec:
 <summary><strong>spec.selector</strong></summary>
 <ul>
   <li>Defines how the Deployment finds which Pods to manage.</li>
-  <li><code>selector.matchLabels</code>: It matches and manage Pods with the label <code>app: my-app</code>.</li>
+  <li>`selector.matchLabels`: It matches and manage Pods with the label `app: my-app`.</li>
   <li>This selector must match the labels in the Pod template below — otherwise the Deployment won’t manage its own Pods.</li>
 </ul>
 </details>
@@ -123,9 +123,9 @@ spec:
 <details>
 <summary><strong>spec.template.metadata.labels</strong></summary>
 <ul>
-  <li><code>template</code>: This defines the template for creating Pods — the Pod specification that the Deployment will replicate.</li>
-  <li><code>Labels</code>: Labels to assign to Pods created by this Deployment.</li>
-  <li>Under template.metadata.labels, you define the labels assigned to Pods that are created. These labels must match the <code>selector.matchLabels</code> above.</li>
+  <li>`template`: This defines the template for creating Pods — the Pod specification that the Deployment will replicate.</li>
+  <li>`Labels`: Labels to assign to Pods created by this Deployment.</li>
+  <li>Under template.metadata.labels, you define the labels assigned to Pods that are created. These labels must match the `selector.matchLabels` above.</li>
 </ul>
 </details>
 
@@ -134,11 +134,11 @@ spec:
 <ul>
   <li>Defines the container(s) in the Pod. This is a list of containers to run inside the Pod. </li>
   <li>A Pod can have one or more containers, though single-container Pods are more common. </li>
-  <li><code>name: my-app-container</code>: Logical name for the container. It is used for referencing the container in logging or debugging. Remember: this is not the name of the Pod or Deployment — just the container</li>
-  <li><code>image: nginx:1.25</code>: This tells Kubernetes to pull the container image nginx:1.25 from the Docker Hub (by default).</li>
-  <li><code>ports</code>: This defines the ports exposed by the container, i.e., ports the application listens on internally.</li>
-  <li><code>containerPort: 80</code>: In this case, NGINX is configured to serve HTTP traffic on port 80.</li>
-  <li>To make it available externally, you'd define a <code>Service</code> object which maps an external port to this <code>containerPort</code>.</li>
+  <li>`name: my-app-container`: Logical name for the container. It is used for referencing the container in logging or debugging. Remember: this is not the name of the Pod or Deployment — just the container</li>
+  <li>`image: nginx:1.25`: This tells Kubernetes to pull the container image nginx:1.25 from the Docker Hub (by default).</li>
+  <li>`ports`: This defines the ports exposed by the container, i.e., ports the application listens on internally.</li>
+  <li>`containerPort: 80`: In this case, NGINX is configured to serve HTTP traffic on port 80.</li>
+  <li>To make it available externally, you'd define a `Service` object which maps an external port to this `containerPort`.</li>
 
 </ul>
 </details>
@@ -148,11 +148,11 @@ spec:
 <ul>
   <li>Resource management: This block is part of the container configuration and tells Kubernetes how to allocate and enforce compute resources (CPU and memory) for the container</li>
   <li><strong>requests</strong>: Minimum resources the container is guaranteed. Reserve these resources for the container even if it's not using them fully at the moment</li>
-  <li><code>cpu: "250m"</code>: "250m" means 250 millicores = 0.25 of a single CPU core. If a node has 4 cores, Kubernetes can fit up to 16 such containers if no other usage.</li>
-  <li><code>memory: "64Mi"</code>: Kubernetes ensures the node has at least 64Mi available before scheduling the container.</li>
+  <li>`cpu: "250m"`: "250m" means 250 millicores = 0.25 of a single CPU core. If a node has 4 cores, Kubernetes can fit up to 16 such containers if no other usage.</li>
+  <li>`memory: "64Mi"`: Kubernetes ensures the node has at least 64Mi available before scheduling the container.</li>
   <li><strong>limits</strong>: Maximum resources the container is allowed to use.</li>
-  <li><code>cpu: "500m"</code>: The container can use up to 0.5 CPU cores. If it tries to exceed that, the kernel throttles the CPU usage.</li>
-  <li><code>memory: "128Mi"</code>: If the container tries to use more than 128Mi, it is killed with an OOM (Out Of Memory) error.</li>
+  <li>`cpu: "500m"`: The container can use up to 0.5 CPU cores. If it tries to exceed that, the kernel throttles the CPU usage.</li>
+  <li>`memory: "128Mi"`: If the container tries to use more than 128Mi, it is killed with an OOM (Out Of Memory) error.</li>
 </ul>
 </details>
 
@@ -161,11 +161,11 @@ spec:
 <ul>
   <li>Tells Kubernetes how to check if the app is still running.</li>
   <li>If this probe fails repeatedly, the Pod is restarted.</li>
-  <li><code>httpGet</code>: Use an HTTP GET request as the probe method.</li>
-  <li><code>path: /</code>: Perform the GET request on the root path (/). You can customize this for /healthz, /status, etc.</li>
-  <li><code>port: 80</code>: Use port 80 inside the container for the check.</li>
-  <li><code>initialDelaySeconds: 15</code>: Wait 15 seconds after the container starts before beginning checks (gives the app time to start).</li>
-  <li><code>periodSeconds: 20</code>: After the first check, perform this probe every 20 seconds.</li>
+  <li>`httpGet`: Use an HTTP GET request as the probe method.</li>
+  <li>`path: /`: Perform the GET request on the root path (/). You can customize this for /healthz, /status, etc.</li>
+  <li>`port: 80`: Use port 80 inside the container for the check.</li>
+  <li>`initialDelaySeconds: 15`: Wait 15 seconds after the container starts before beginning checks (gives the app time to start).</li>
+  <li>`periodSeconds: 20`: After the first check, perform this probe every 20 seconds.</li>
 </ul>
 </details>
 
@@ -181,18 +181,18 @@ spec:
 <details>
 <summary><strong>spec.template.spec.containers.volumeMounts</strong></summary>
 <ul>
-  <li><code>volumeMounts</code>: Defines where in the container the volume is mounted.</li>
-  <li><code>name: html-volume</code>: Refers to the Pod-level volume defined under volumes:. The names must match exactly.</li>
-  <li><code>mountPath: /usr/share/nginx/html</code>: This is the target path inside the container.</li>
+  <li>`volumeMounts`: Defines where in the container the volume is mounted.</li>
+  <li>`name: html-volume`: Refers to the Pod-level volume defined under volumes:. The names must match exactly.</li>
+  <li>`mountPath: /usr/share/nginx/html`: This is the target path inside the container.</li>
 </ul>
 </details>
 
 <details>
 <summary><strong>spec.template.spec.volumes</strong></summary>
 <ul>
-  <li><code>volumes</code>: Defines the actual volume resource (e.g., <code>emptyDir</code>, <code>configMap</code>, etc.). It is a list of named volumes that the Pod can use.</li>
-  <li><code>name: html-volume</code>: This is the name of the volume. It must match what's used in the container’s volumeMounts</li>
-  <li><code>emptyDir: {}</code>: This tells Kubernetes to use an emptyDir volume — a built-in ephemeral volume type.</li>
+  <li>`volumes`: Defines the actual volume resource (e.g., `emptyDir`, `configMap`, etc.). It is a list of named volumes that the Pod can use.</li>
+  <li>`name: html-volume`: This is the name of the volume. It must match what's used in the container’s volumeMounts</li>
+  <li>`emptyDir: {}`: This tells Kubernetes to use an emptyDir volume — a built-in ephemeral volume type.</li>
 </ul>
 </details>
 
