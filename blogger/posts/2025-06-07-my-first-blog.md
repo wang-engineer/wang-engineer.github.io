@@ -1,3 +1,9 @@
+---
+layout: default
+title: About Me
+tags: [kubernetes, deployment, machine-learning]
+permalink: /blogger/posts/2025-06-07-my-first-blog/
+---
 
 # Understanding `deployment.yaml` in Kubernetes
 
