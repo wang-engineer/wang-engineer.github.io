@@ -219,4 +219,4 @@ kubectl describe deployment my-app
 # Stream logs from a container
 kubectl logs -f <pod-name>
 ```
-
+For official instructions about Deployment YAML, go to the [Kubernetes official site](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/).
