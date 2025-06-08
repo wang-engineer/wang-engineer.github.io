@@ -192,7 +192,7 @@ spec:
 <ul>
   <li>`volumes`: Defines the actual volume resource (e.g., `emptyDir`, `configMap`, etc.). It is a list of named volumes that the Pod can use.</li>
   <li>`name: html-volume`: This is the name of the volume. It must match what's used in the container’s volumeMounts</li>
-  <li>`emptyDir: {}`: This tells Kubernetes to use an emptyDir volume — a built-in ephemeral volume type.</li>
+  <li><code>>emptyDir: {}</code>: This tells Kubernetes to use an emptyDir volume — a built-in ephemeral volume type.</li>
 </ul>
 </details>
 
