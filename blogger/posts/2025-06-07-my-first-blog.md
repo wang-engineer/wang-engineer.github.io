@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 2025-06-07: understanding deployment manifest in Kubernetes
+title: 2025-06-07\: understanding deployment manifest in Kubernetes
 tags: [kubernetes, deployment, machine-learning]
 permalink: /blogger/posts/2025-06-07-my-first-blog/
 ---
