@@ -103,14 +103,14 @@ spec:
 </details>
 
 <details>
-<summary><strong>template.metadata.labels</strong></summary>
+<summary><strong>spec.template.metadata.labels</strong></summary>
 <ul>
   <li>Labels to assign to Pods created by this Deployment.</li>
 </ul>
 </details>
 
 <details>
-<summary><strong>containers</strong></summary>
+<summary><strong>spec.template.spec.containers</strong></summary>
 <ul>
   <li>Defines the container(s) in the Pod.</li>
   <li><code>name</code>: Logical name for the container.</li>
@@ -120,7 +120,7 @@ spec:
 </details>
 
 <details>
-<summary><strong>resources</strong></summary>
+<summary><strong>spec.template.spec.containers.resources</strong></summary>
 <ul>
   <li>Resource management:</li>
   <li><strong>requests</strong>: Minimum resources the container is guaranteed.</li>
@@ -129,15 +129,20 @@ spec:
 </details>
 
 <details>
-<summary><strong>livenessProbe</strong></summary>
+<summary><strong>spec.template.spec.containers.livenessProbe</strong></summary>
 <ul>
   <li>Tells Kubernetes how to check if the app is still running.</li>
   <li>If this probe fails repeatedly, the Pod is restarted.</li>
+  <li><code>httpGet</code>: Use an HTTP GET request as the probe method.</li>
+  <li><code>path: /</code>: Perform the GET request on the root path (/). You can customize this for /healthz, /status, etc.</li>
+  <li><code>port: 80</code>: Use port 80 inside the container for the check.</li>
+  <li><code>initialDelaySeconds: 15</code>: Wait 15 seconds after the container starts before beginning checks (gives the app time to start).</li>
+  <li><code>periodSeconds: 20</code>: After the first check, perform this probe every 20 seconds.</li>
 </ul>
 </details>
 
 <details>
-<summary><strong>readinessProbe</strong></summary>
+<summary><strong>spec.template.spec.containers.readinessProbe</strong></summary>
 <ul>
   <li>Determines if the app is ready to receive traffic.</li>
   <li>If it fails, the Pod is removed from service endpoints.</li>
@@ -145,10 +150,20 @@ spec:
 </details>
 
 <details>
-<summary><strong>volumeMounts and volumes</strong></summary>
+<summary><strong>spec.template.spec.containers.volumeMounts</strong></summary>
 <ul>
   <li><code>volumeMounts</code>: Defines where in the container the volume is mounted.</li>
-  <li><code>volumes</code>: Defines the actual volume resource (e.g., <code>emptyDir</code>, <code>configMap</code>, etc.).</li>
+  <li><code>name: html-volume</code>: Refers to the Pod-level volume defined under volumes:. The names must match exactly.</li>
+  <li><code>mountPath: /usr/share/nginx/html</code>: This is the target path inside the container.</li>
+</ul>
+</details>
+
+<details>
+<summary><strong>spec.template.spec.volumes</strong></summary>
+<ul>
+  <li><code>volumes</code>: Defines the actual volume resource (e.g., <code>emptyDir</code>, <code>configMap</code>, etc.). It is a list of named volumes that the Pod can use.</li>
+  <li><code>name: html-volume</code>: This is the name of the volume. It must match what's used in the container’s volumeMounts</li>
+  <li><code>emptyDir: {}</code>: This tells Kubernetes to use an emptyDir volume — a built-in ephemeral volume type.</li>
 </ul>
 </details>
 
