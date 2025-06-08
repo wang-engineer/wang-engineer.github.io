@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Blog Posts
-permalink: /blogger/
+permalink: /blogger/index/
 ---
 
 <h1>📝 Blog Posts</h1>
