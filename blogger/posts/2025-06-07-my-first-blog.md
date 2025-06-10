@@ -6,8 +6,8 @@ permalink: /blogger/posts/2025-06-07-my-first-blog/
 ---
 
 # Understanding `deployment.yaml` in Kubernetes with an example
-> 💬 *“If you can’t explain it simply, you don’t understand it well enough.”*  
-> — Albert Einstein
+> 💬 *“大道甚夷，而人好径。(The great Dao is perfectly level, yet people love to take narrow, winding paths.)”*  
+> — Laozi
 
 ## 🧠 Introduction: Why Learn the `deployment.yaml`?
 
