@@ -77,7 +77,7 @@ spec:
 
 ---
 
-## 🔍 Explanation of Each Section
+## 🔍 Explanation of Each Section (Expand for details)
 
 <details>
 <summary><strong>apiVersion: apps/v1</strong></summary>
@@ -198,7 +198,7 @@ spec:
 
 ---
 
-## 🧾 What This Deployment Actually Does (In Plain English)
+## 🧾 What This Deployment Actually Does
 
 Now that we’ve explored each section of the YAML file line by line, let’s take a step back and talk through what this whole file accomplishes — not in fragments, but as a story.
 
