@@ -6,6 +6,8 @@ permalink: /blogger/posts/2025-06-10-service-yaml/
 ---
 
 # Understanding service.yaml in Kubernetes with an example
+> 💬 *“上善若水。水善利万物而不争，处众人之所恶，故几于道 。(The highest good is like water. Water benefits all things without contention. It dwells in places that others disdain. Thus, it is close to the Dao (Way).)”*  
+> — Laozi
 
 ## 🧠 Introduction: Why Learn the service.yaml?
 
@@ -122,7 +124,7 @@ In summary, this Service enables internal cluster access to the NGINX applicatio
 
 ## ✅ Service Command
 
-Once you’ve written and saved your `service.yaml` file, you can apply it to your Kubernetes cluster with the followingJr following command:
+Once you’ve written and saved your `service.yaml` file, you can apply it to your Kubernetes cluster with the following command:
 
 ```bash
 kubectl apply -f service.yaml
