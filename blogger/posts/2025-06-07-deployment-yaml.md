@@ -2,7 +2,7 @@
 layout: default
 title: "2025-06-07: understanding deployment manifest in Kubernetes with an example"
 tags: [kubernetes, deployment]
-permalink: /blogger/posts/2025-06-07-my-first-blog/
+permalink: /blogger/posts/2025-06-07-deployment-yaml/
 ---
 
 # Understanding `deployment.yaml` in Kubernetes with an example
