@@ -1,0 +1,3 @@
+difference replicaset vs deployment
+difference readiness vs liveness probe
+overview of pods, service, ingress, load balancer
