@@ -5,7 +5,7 @@ tags: [kubernetes]
 permalink: /blogger/posts/2025-06-10-service-yaml/
 ---
 
-# Understanding service.yaml in Kubernetes with an example
+# Understanding `service.yaml` in Kubernetes with an example
 > 💬 *“上善若水。水善利万物而不争，处众人之所恶，故几于道 。(The highest good is like water. Water benefits all things without contention. It dwells in places that others disdain. Thus, it is close to the Dao (Way).)”*  
 > — Laozi
 
