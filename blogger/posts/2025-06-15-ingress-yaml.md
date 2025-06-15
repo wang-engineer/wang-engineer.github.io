@@ -124,7 +124,40 @@ Here’s the play-by-play:
 - The `rewrite-target` annotation ensures the URL is rewritten to `/` (handy if your app expects root-based paths).
 - Traffic is forwarded to `my-app-service:80`, which distributes it to one of the NGINX Pods’ `targetPort: 80`.
 - The NGINX Pod serves the default webpage (e.g., “Welcome to Nginx!”).
-![Workflow Diagram](../images/ingress-service.svg)
+<!-- ![Workflow Diagram](../images/ingress-service.svg) -->
+<div class="mermaid">
+graph TD
+    A[User Browser<br>example.com] -->|HTTP Request| LB[Load Balancer]
+    LB -->|Distributes to| B[NGINX Ingress Controller<br>External IP]
+
+    %% Kubernetes Cluster Subgraph
+    subgraph K8sCluster[name cluster]
+        B -->|Matches host: example.com| C[Ingress: my-app-ingress<br>path: /]
+        C -->|Routes to| D[Service: my-app-service<br>port: 80]
+        D -->|Load Balances| E[Pod 1<br>targetPort: 80]
+        D -->|Load Balances| F[Pod 2<br>targetPort: 80]
+        D -->|Load Balances| G[Pod 3<br>targetPort: 80]
+        E -->|Serves| H[NGINX Webpage]
+        F -->|Serves| H
+        G -->|Serves| H
+    end
+
+    %% Styling nodes
+    classDef nodeStyle fill:#69b5ce,stroke:#333333,stroke-width:2px,color:#090c0c;
+    class A,LB,B,C,D,E,F,G,H nodeStyle;
+
+    %% Styling edges
+    linkStyle default stroke:#333333,stroke-width:2px;
+
+    %% Styling subgraph border
+    classDef clusterStyle fill:none,stroke:#333333,stroke-width:4px,stroke-dasharray:5,5;
+    class K8sCluster clusterStyle;
+</div>
+
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+</script>
 
 The `ingressClassName: nginx` ensures the NGINX Ingress Controller handles this resource, avoiding confusion if multiple controllers are running. The `pathType: Prefix` makes the rule flexible, catching all URLs under `example.com/`, so `example.com/about` works too. This setup is perfect for public-facing web apps, as it’s secure (HTTPS can be added with TLS settings), scalable (the Ingress Controller and Service handle load balancing), and cost-efficient (no need for a `LoadBalancer` Service per app).
 
