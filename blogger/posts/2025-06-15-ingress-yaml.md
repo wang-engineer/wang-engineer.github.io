@@ -205,5 +205,3 @@ kubectl port-forward service/my-app-service 8080:80
 ```
 
 For official Ingress documentation, visit the [Kubernetes Ingress page](https://kubernetes.io/docs/concepts/services-networking/ingress/).
-
-Happy routing, and don’t panic if DNS takes a coffee break to propagate — you’ve got this! 🎉
