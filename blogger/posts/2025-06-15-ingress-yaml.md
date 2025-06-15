@@ -147,7 +147,7 @@ graph TD
     class A,LB,B,C,D,E,F,G,H nodeStyle;
 
     %% Styling edges
-    linkStyle default stroke:#4287f5,stroke-width:2px,fill:#4287f5;
+    linkStyle default stroke:#4287f5,stroke-width:2px,fill:none;
 
     %% Styling subgraph border
     classDef clusterStyle fill:none,stroke:#4287f5,stroke-width:4px,stroke-dasharray:5,5;
