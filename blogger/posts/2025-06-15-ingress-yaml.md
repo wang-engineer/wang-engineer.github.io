@@ -131,7 +131,7 @@ graph TD
     LB -->|Distributes to| B[NGINX Ingress Controller<br>External IP]
 
     %% Kubernetes Cluster Subgraph
-    subgraph K8sCluster[name cluster]
+    subgraph K8sCluster[ ]
         B -->|Matches host: example.com| C[Ingress: my-app-ingress<br>path: /]
         C -->|Routes to| D[Service: my-app-service<br>port: 80]
         D -->|Load Balances| E[Pod 1<br>targetPort: 80]
@@ -143,14 +143,14 @@ graph TD
     end
 
     %% Styling nodes
-    classDef nodeStyle fill:#69b5ce,stroke:#333333,stroke-width:2px,color:#090c0c;
+    classDef nodeStyle fill:#69b5ce,stroke:#4287f5,stroke-width:2px,color:#090c0c;
     class A,LB,B,C,D,E,F,G,H nodeStyle;
 
     %% Styling edges
-    linkStyle default stroke:#333333,stroke-width:2px;
+    linkStyle default stroke:#4287f5,stroke-width:2px;
 
     %% Styling subgraph border
-    classDef clusterStyle fill:none,stroke:#333333,stroke-width:4px,stroke-dasharray:5,5;
+    classDef clusterStyle fill:none,stroke:#4287f5,stroke-width:4px,stroke-dasharray:5,5;
     class K8sCluster clusterStyle;
 </div>
 
