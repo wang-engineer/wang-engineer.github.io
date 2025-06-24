@@ -1,3 +1,4 @@
 difference replicaset vs deployment(tips clarify apply vs create)
 difference readiness vs liveness probe
 overview of pods, service, ingress, load balancer
+secret(base64 encoded, data, opaque, stringdata? encoded for you?), configmap, 
