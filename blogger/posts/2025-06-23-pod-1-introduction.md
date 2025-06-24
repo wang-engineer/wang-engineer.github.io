@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "2025-06-23: Understand Pods in Kubernetes: Introduction"
+title: "2025-06-23: Introducing Pods in Kubernetes - I: The Smallest Deployable Unit"
 tags: [kubernetes]
 permalink: /blogger/posts/2025-06-23-pod-1-introduction.md/
 ---
 
-# Introducing Pods in Kubernetes: The Smallest Deployable Unit
+# Introducing Pods in Kubernetes - I: The Smallest Deployable Unit
 
 Kubernetes is a powerful system for managing containerized applications, and at the heart of it all lies the concept of the **Pod**. If you're just getting started with Kubernetes, understanding what a Pod is—and what it isn't—is an essential first step. This guide will walk you through the fundamentals of Pods, their architecture, lifecycle, and best practices to help you confidently work with Kubernetes.
 
