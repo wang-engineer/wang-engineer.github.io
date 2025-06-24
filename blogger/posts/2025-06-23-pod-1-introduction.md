@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "2025-06-15: Understand Pods in Kubernetes: Introduction"
+title: "2025-06-23: Understand Pods in Kubernetes: Introduction"
 tags: [kubernetes]
 permalink: /blogger/posts/2025-06-23-pod-1-introduction.md/
 ---
@@ -61,7 +61,8 @@ For example, you might have an app container and a log collector container in th
  |-- Shared Volumes (e.g., emptyDir for log files)
 ```
 
-This architecture ensures tight integration while keeping the Pod lightweight and focused on a specific task.
+This architecture ensures tight integration while keeping the Pod lightweight and focused on a specific task. The following diagram illustrates how pods are scheduled on a Kubernetes node. A node is the smallest compute unit in Kubernetes, equipped with a kubelet to manage pod scheduling and a container runtime (such as Docker) to run containers. Each pod, which is the basic deployable unit in Kubernetes, can contain one or more containers that share the same network namespace and storage volumes.
+![Kubernetes Pods](../images/k8s_pod.webp)
 
 ---
 
