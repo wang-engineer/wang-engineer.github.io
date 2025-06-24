@@ -9,7 +9,7 @@ permalink: /blogger/posts/2025-06-15-ingress-yaml/
 > 💬 *“知人者智，自知者明。胜人者有力，自胜者强。(He who knows others is wise; he who knows himself is enlightened. He who conquers others is strong; he who conquers himself is truly powerful.)*  
 > — Laozi
 
-## 🧠 Introduction: Why Learn the ingress.yaml?
+## Introduction: Why Learn the ingress.yaml?
 
  In previous posts, you’ve [deployed your Pods with `deployment.yaml`](https://wang-engineer.github.io/blogger/posts/2025-06-07-deployment-yaml/) and made them accessible inside the Kubernetes cluster with [`service.yaml`](https://wang-engineer.github.io/blogger/posts/2025-06-10-service-yaml/). But now you’re wondering, *“How do I let the outside world—aka my users—reach this app?”* Fear not, friend! The `ingress.yaml` is your ticket to exposing your application to the internet in a slick, controlled way. It’s like opening a fancy front door to your Kubernetes house, complete with a doorman checking IDs.
 
@@ -24,7 +24,7 @@ This post builds on our NGINX app example, showing you an `ingress.yaml` that ex
 
 ---
 
-## 📄 Example: Full ingress.yaml
+## Example: Full ingress.yaml
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -50,7 +50,7 @@ spec:
 
 ---
 
-## 🔍 Explanation of Each Section (Expand for details)
+## Explanation of Each Section (Expand for details)
 
 <details>
 <summary><strong>apiVersion: networking.k8s.io/v1</strong></summary>
@@ -113,7 +113,7 @@ spec:
 
 ---
 
-## 🧾 What This Ingress Actually Does
+## What This Ingress Actually Does
 
 This `ingress.yaml` creates a Kubernetes **Ingress** resource named `my-app-ingress` that exposes the `my-app-service` (and thus our NGINX app) to the outside world via the domain `example.com`. It works with an NGINX Ingress Controller to route HTTP traffic from `example.com/` (and all subpaths) to the `my-app-service` Service on port 80, which then load-balances requests across the NGINX Pods.
 
@@ -170,7 +170,7 @@ This Ingress makes your NGINX app accessible to anyone with the right URL, provi
 
 ---
 
-## 🚀 Ingress Command
+## Ingress Command
 
 Before deploying, ensure you have an NGINX Ingress Controller installed. For a quick setup (e.g., in a test cluster):
 ```bash

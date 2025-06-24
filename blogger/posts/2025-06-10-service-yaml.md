@@ -9,7 +9,7 @@ permalink: /blogger/posts/2025-06-10-service-yaml/
 > 💬 *“上善若水。水善利万物而不争，处众人之所恶，故几于道 。(The highest good is like water. Water benefits all things without contention. It dwells in places that others disdain. Thus, it is close to the Dao (Way).)”*  
 > — Laozi
 
-## 🧠 Introduction: Why Learn the service.yaml?
+## Introduction: Why Learn the service.yaml?
 
 If you’ve ever deployed an application in Kubernetes using a `deployment.yaml` and wondered, *“How do I actually access this app?”* — you’re in the right place. The `service.yaml` is the key to making your application reachable, whether it’s for other services inside the cluster or, with additional configuration, for users outside the cluster. Without a Service, your Pods are like hidden treasures — running perfectly but inaccessible.
 
@@ -24,7 +24,7 @@ This guide breaks down a `service.yaml` file that complements the `deployment.ya
 
 ---
 
-## 📄 Example: Full service.yaml
+## Example: Full service.yaml
 
 ```yaml
 apiVersion: v1
@@ -43,7 +43,7 @@ spec:
 
 ---
 
-## 🔍 Explanation of Each Section (Expand for details)
+## Explanation of Each Section (Expand for details)
 
 <details>
 <summary><strong>apiVersion: v1</strong></summary>
@@ -106,7 +106,7 @@ spec:
 
 ---
 
-## 🧾 What This Service Actually Does
+## What This Service Actually Does
 
 This `service.yaml` creates a **Kubernetes Service** named `my-app-service` that makes the NGINX application (from the `deployment.yaml`) accessible within the Kubernetes cluster. It connects to the Pods managed by the `my-app` Deployment, identified by the label `app: my-app`. The Service ensures that traffic sent to it is distributed across the three replicas of the NGINX Pods, providing **load balancing** and fault tolerance. If one Pod fails, the Service automatically routes traffic to the remaining healthy Pods.
 
@@ -122,7 +122,7 @@ In summary, this Service enables internal cluster access to the NGINX applicatio
 
 ---
 
-## ✅ Service Command
+## Service Command
 
 Once you’ve written and saved your `service.yaml` file, you can apply it to your Kubernetes cluster with the following command:
 

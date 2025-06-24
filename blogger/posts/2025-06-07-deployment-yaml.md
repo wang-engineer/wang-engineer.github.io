@@ -9,7 +9,7 @@ permalink: /blogger/posts/2025-06-07-deployment-yaml/
 > 💬 *“大道甚夷，而人好径。(The great Dao is perfectly level, yet people love to take narrow, winding paths.)”*  
 > — Laozi
 
-## 🧠 Introduction: Why Learn the `deployment.yaml`?
+## Introduction: Why Learn the `deployment.yaml`?
 
 If you’ve ever opened a `deployment.yaml` file and thought, *“Whoa, what’s going on here?”* — you’re not alone. YAML files in Kubernetes can feel cryptic, especially when you're just getting started with DevOps, MLOps, or deploying machine learning services into production. Even experienced software or ML engineers might glance at a line like `emptyDir: {}` or `livenessProbe:` and think, *“Is this some kind of magic incantation?”*
 
@@ -26,7 +26,7 @@ So let’s walk through each part of the file and demystify it, line by line. By
 
 ---
 
-## 📄 Example: Full `deployment.yaml`
+## Example: Full `deployment.yaml`
 
 ```yaml
 apiVersion: apps/v1
@@ -77,7 +77,7 @@ spec:
 
 ---
 
-## 🔍 Explanation of Each Section (Expand for details)
+## Explanation of Each Section (Expand for details)
 
 <details>
 <summary><strong>apiVersion: apps/v1</strong></summary>
@@ -198,7 +198,7 @@ spec:
 
 ---
 
-## 🧾 What This Deployment Actually Does
+## What This Deployment Actually Does
 
 Now that we’ve explored each section of the YAML file line by line, let’s take a step back and talk through what this whole file accomplishes — not in fragments, but as a story.
 
@@ -227,7 +227,7 @@ Altogether, this Deployment manifest represents a compact but powerful configura
 
 ---
 
-## ✅ Deployment Command
+## Deployment Command
 Once you’ve written and saved your `deployment.yaml` file, you can apply it to your Kubernetes cluster with the following command:
 
 ```bash
