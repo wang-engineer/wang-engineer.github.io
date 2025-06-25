@@ -5,7 +5,10 @@ tags: [kubernetes]
 permalink: /blogger/posts/2025-06-24-pod-3-replicaset/
 ---
 
-## Introducing Pods in Kubernetes - III: Pod Management with ReplicaSet
+# Introducing Pods in Kubernetes - III: Pod Management with ReplicaSet
+
+> 💬 *“成功而弗居也。夫唯弗居，是以弗去。(Accomplishes yet does not dwell on it. Because he does not dwell on it, It never leaves him.)"*  
+> — Laozi
 
 In my [previous post](https://wang-engineer.github.io/blogger/posts/2025-06-24-pod-2-yaml/), we explored how to define and configure Kubernetes Pods using YAML manifests. While Pods are the fundamental units in Kubernetes, managing them individually can become challenging, especially when you need multiple instances of the same Pod for scalability or reliability. This is where **ReplicaSets** come into play.
 
@@ -21,6 +24,7 @@ A ReplicaSet is a Kubernetes controller that ensures a specified number of Pod r
 4. **Simplified Management**: Instead of managing individual Pods, you define a single ReplicaSet that handles the creation, deletion, and monitoring of multiple Pods based on a template.
 
 ![Kubernetes ReplicaSet](../images/k8s_replicaset.webp)
+
 The diagram above illustrates how a Kubernetes ReplicaSet ensures the desired number of Pods are always running across a cluster. In this example, the ReplicaSet is configured with 6 replicas. These Pods are distributed across three nodes (Node 1, Node 2, and Node 3), allowing Kubernetes to balance the workload. Each Pod contains one or more containers that host application components. The ReplicaSet continuously monitors the state of the cluster and takes action if any of the Pods fail—due to crashes, node failures, or other disruptions. If a Pod stops running, Kubernetes automatically reschedules it on a healthy node to restore the defined state. For instance, if Node 2 goes offline, the ReplicaSet will detect the loss of Pods 4 and 5 and recreate them on another available node, such as Node 3. This self-healing capability ensures high availability and fault tolerance. This mechanism highlights the declarative nature of Kubernetes—where you define the desired state, and the system actively works to maintain it.
 
 While ReplicaSets are powerful, they are often used indirectly through higher-level controllers like Deployments, which we’ll cover in future posts. However, understanding ReplicaSets is key to grasping how Kubernetes achieves resilience and scalability.

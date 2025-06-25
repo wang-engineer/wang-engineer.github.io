@@ -208,8 +208,7 @@ Inside each of these Pods is a single container based on the `nginx:1.25` image 
 
 The Deployment also defines **resource requests and limits** for the container. Each instance is guaranteed 250 millicores of CPU and 64Mi of memory, meaning the scheduler will only place it on a node with at least that much available. However, the container is not allowed to consume more than 500 millicores and 128Mi. If it exceeds the memory limit, Kubernetes will terminate it with an out-of-memory (OOM) error. These constraints prevent the container from consuming excessive resources, helping to maintain cluster stability — especially when multiple workloads share the same nodes.
 
-<details>
-<summary><strong>🩺 Liveness and Readiness Probes (click to expand)</strong></summary>
+### Liveness and Readiness Probes
 
 To monitor container health, the manifest includes two types of probes: `livenessProbe` and `readinessProbe`.
 
@@ -218,8 +217,6 @@ To monitor container health, the manifest includes two types of probes: `livenes
 - The **readiness probe** also sends an HTTP GET to `/`, but its purpose is slightly different. It checks whether the application is ready to **serve user traffic**. If this probe fails, the container stays alive, but it is removed from the pool of endpoints behind any Kubernetes `Service`, meaning it won't receive traffic until it passes the check again.
 
 This distinction between *liveness* (is it running?) and *readiness* (can it serve?) is crucial for smooth, resilient deployments.
-
-</details>
 
 Another important feature in this manifest is the **ephemeral volume**. Each container mounts a volume named `html-volume` at the path `/usr/share/nginx/html`, which is where NGINX typically serves static files. The backing volume is an `emptyDir`, meaning it's a temporary storage area that exists only for the lifetime of the Pod. It’s wiped clean if the Pod is deleted or restarted. This can be useful for caching, staging content dynamically, or running test workloads that don’t require long-term data persistence.
 
