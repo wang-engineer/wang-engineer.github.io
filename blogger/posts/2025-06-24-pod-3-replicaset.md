@@ -59,7 +59,7 @@ spec:
 
 ### Key Components of the ReplicaSet YAML
 
-Since this post focuses on ReplicaSet-specific parts, I’ll briefly cover the familiar fields and dive deeper into the unique ones. For a detailed explanation of Pod-related fields (e.g., `containers`, `image`), refer to my [previous post](https://wang-engineer.github.io/blogger/posts/2025-06-24-pod-2-yaml.md/).
+Since this post focuses on ReplicaSet-specific parts, I’ll briefly cover the familiar fields and dive deeper into the unique ones. For a detailed explanation of Pod-related fields (e.g., `containers`, `image`), refer to my [previous post](https://wang-engineer.github.io/blogger/posts/2025-06-24-pod-2-yaml/).
 
 - **`apiVersion: apps/v1`**: Specifies the Kubernetes API version for ReplicaSets, which is part of the `apps` API group.
 - **`kind: ReplicaSet`**: Indicates that this is a ReplicaSet resource.

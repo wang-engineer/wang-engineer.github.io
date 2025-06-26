@@ -3,3 +3,8 @@ difference readiness vs liveness probe
 overview of pods, service, ingress, load balancer
 secret(base64 encoded, data, opaque, stringdata? encoded for you?), configmap, 
 HPA, VPA
+
+use supervisor to manage multiple process in container
+git display branch in prompt
+
+
