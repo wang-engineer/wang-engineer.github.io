@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "2025-06-24: Introducing Pods in Kubernetes - III: Pod Management with ReplicaSet"
-tags: [kubernetes]
+tags: [Kubernetes]
 permalink: /blogger/posts/2025-06-24-pod-3-replicaset/
 ---
 

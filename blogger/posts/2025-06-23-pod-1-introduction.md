@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "2025-06-23: Introducing Pods in Kubernetes - I: The Smallest Deployable Unit"
-tags: [kubernetes]
+tags: [Kubernetes]
 permalink: /blogger/posts/2025-06-23-pod-1-introduction/
 ---
 

@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "2025-06-07: Understanding Deployment Manifest In Kubernetes With An Example"
-tags: [kubernetes, deployment]
+title: "2025-06-07: Understanding Deployment Manifest in Kubernetes with an Example"
+tags: [Kubernetes, Deployment]
 permalink: /blogger/posts/2025-06-07-deployment-yaml/
 ---
 
-# Understanding Deployment Manifest In Kubernetes With An Example
+# Understanding Deployment Manifest in Kubernetes with an Example
 > 💬 *“大道甚夷，而人好径。(The great Dao is perfectly level, yet people love to take narrow, winding paths.)”*  
 > — Laozi
 

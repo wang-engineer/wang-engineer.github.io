@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "2025-06-15: Understanding Ingress Manifest In Kubernetes With An Example"
-tags: [kubernetes]
+title: "2025-06-15: Understanding Ingress Manifest in Kubernetes with an Example"
+tags: [Kubernetes]
 permalink: /blogger/posts/2025-06-15-ingress-yaml/
 ---
 
-# Understanding Ingress Manifest In Kubernetes With An Example
+# Understanding Ingress Manifest in Kubernetes with an Example
 > 💬 *“知人者智，自知者明。胜人者有力，自胜者强。(He who knows others is wise; he who knows himself is enlightened. He who conquers others is strong; he who conquers himself is truly powerful.)*  
 > — Laozi
 
