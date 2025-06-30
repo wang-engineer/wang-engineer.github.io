@@ -3,6 +3,8 @@ difference readiness vs liveness probe
 overview of pods, service, ingress, load balancer
 secret(base64 encoded, data, opaque, stringdata? encoded for you?), configmap, 
 HPA, VPA
+persistent volume, persistent volume claim, pod usage, static provision vs dynamic provision(table), what is storage name class? how to delete the pvc, pv, underlying storage.
+
 
 use supervisor to manage multiple process in container
 git display branch in prompt
