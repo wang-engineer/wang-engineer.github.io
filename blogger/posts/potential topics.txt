@@ -9,4 +9,8 @@ persistent volume, persistent volume claim, pod usage, static provision vs dynam
 use supervisor to manage multiple process in container
 git display branch in prompt
 
+fastapi
+deploy a fastapi application
+build fastapi celery project (rabbitmq, redis)
+
 
