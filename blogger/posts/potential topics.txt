@@ -13,4 +13,18 @@ fastapi
 deploy a fastapi application
 build fastapi celery project (rabbitmq, redis)
 
+alias gs="git status"
+alias gau="git add -u"
+alias gcm="git commit -m"
+alias gps="git push"
+alias gco="git checkout"
+alias gcob="git checkout -b"
+alias gpl="git pull"
 
+function parse_git_branch() {
+    git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/[\1]/p'
+}
+COLOR_DEF=$'%f'
+COLOR_GIT=$'%F{51}'
+setopt PROMPT_SUBST
+export PROMPT='%n@%m %1~ ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF} %# '
