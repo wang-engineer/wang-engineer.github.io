@@ -5,7 +5,7 @@ plugins:
 # control whether to show the download buttons and github repository link
 show_downloads: false
 title: A Machine Learning Engineer's Homepage
-description: It is not just about machine learning engineering ...
+description: It is not just about machine learning ...
 markdown: kramdown
 kramdown:
   input: GFM
