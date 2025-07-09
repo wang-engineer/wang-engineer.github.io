@@ -1,7 +1,9 @@
 difference replicaset vs deployment(tips clarify apply vs create)
 difference readiness vs liveness probe
 overview of pods, service, ingress, load balancer
-secret(base64 encoded, data, opaque, stringdata? encoded for you?), configmap, 
+secret(base64 encoded, data, opaque, stringdata? encoded for you?), configmap, stringdata will be base64 encoded automatically, if use data, then we need to encoded it on our own.
+When we try to update a secret, if the key is null duo to some injection error, then the original value will not be changed. This may cause unintened result, need attention.
+
 HPA, VPA
 persistent volume, persistent volume claim, pod usage, static provision vs dynamic provision(table), what is storage name class? how to delete the pvc, pv, underlying storage.
 
